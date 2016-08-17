@@ -1,0 +1,41 @@
+0.0.6
+-FIX Skin Settings Option (missing label)
+-FIX Changelog Textsize
+
+
+0.0.5
+-FIX Home Icon-Banner
+-FIX Small Font in some Windows
+-FIX Some Texts in Dark Theme (Dark textcolor on Dark background)
+-NEW AddOn-Settings Style
+-NEW VIdeo-Information Style
+-NEW Dialog Information
+-NEW Some new Button Style
+-NEW New Custom Backgrounds (thanks to: Jakeround98)
+
+
+
+0.0.4
+-FIX (not showing intro)
+-FIX (Home Background showing Black)
+-FIX (some string sizes)
+-Fonts are now usable
+-New AddOn-Information Style
+-New Icons (thanks to: plusorminus)  
+-New Power-Off Style
+-New Skin-Settings Style
+-New Dialog Style
+-New Video-Player Style
+
+0.0.3
+-New Intro
+-First Help Dialog Test
+
+0.0.2
+-Themes | Dark, Light, Extra Light
+-New Icons
+
+0.0.1
+-first alpha version
+-Keyboard (WIP)
+-Login Screen (WIP)

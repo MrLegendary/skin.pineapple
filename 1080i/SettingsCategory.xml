@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="12">
+    <defaultcontrol always="true">3</defaultcontrol>
+    <backgroundcolor>Background</backgroundcolor>
+    <allowoverlay>no</allowoverlay>
+    <include>OpenClose</include>
+    <controls>
+        <include>Background</include>
+        <control type="label" id="2" description="Heading">
+            <top>25</top>
+			<include>Heading</include>
+            <label>-</label>
+        </control>
+        <control type="grouplist" id="3" description="LeftMenu">
+            <left>70</left>
+            <top>120</top>
+            <width>400</width>
+            <height>850</height>
+            <align>left</align>
+            <itemgap>8</itemgap>
+            <onup>noop</onup>
+            <ondown>20</ondown>
+            <onright>5</onright>
+        </control>
+        <control type="grouplist" id="5" description="Stage">
+            <left>450</left>
+            <top>120</top>
+            <width>1400</width>
+            <height>850</height>
+            <align>left</align>
+            <onup>noop</onup>
+            <ondown>noop</ondown>
+            <onright>noop</onright>
+            <onleft>3</onleft>
+            <itemgap>8</itemgap>
+            <pagecontrol>60</pagecontrol>
+        </control>
+        <control type="button" id="7" description="Button">
+            <font>font34</font>
+			<textoffsetx>20</textoffsetx>
+            <align>left</align>
+			<texturenofocus diffuse="defaults/addonsettingdiffuse.png">defaults/button.png</texturenofocus>
+    <texturefocus diffuse="defaults/addonsettingdiffuse.png">defaults/buttonfocus.png</texturefocus>
+        </control>
+        <control type="radiobutton" id="8" description="Radio Button">
+            <font>font34</font>
+			<textoffsetx>20</textoffsetx>
+            <align>left</align>
+			<texturenofocus diffuse="defaults/addonsettingdiffuse.png">defaults/button.png</texturenofocus>
+    <texturefocus diffuse="defaults/addonsettingdiffuse.png">defaults/buttonfocus.png</texturefocus>
+        </control>
+        <control type="spincontrolex" id="9" description="Spin control">
+            <align>left</align>
+            <font>font34</font>
+			<texturenofocus diffuse="defaults/addonsettingdiffuse.png">defaults/button.png</texturenofocus>
+    <texturefocus diffuse="defaults/addonsettingdiffuse.png">defaults/buttonfocus.png</texturefocus>
+        </control>
+        <control type="button" id="10" description="Category Button">
+            <textoffsetx>20</textoffsetx>
+            <width>300</width>
+            <font>font34</font>
+			<texturenofocus diffuse="defaults/addonsettingdiffuse.png">defaults/button.png</texturenofocus>
+    <texturefocus diffuse="defaults/addonsettingdiffuse.png">defaults/buttonfocus.png</texturefocus>
+        </control>
+        <control type="sliderex" id="13">
+            <description>Default Slider</description>
+            <font>size34</font>
+            <aligny>center</aligny>
+        </control>
+        <control type="scrollbar" id="60">
+            <left>39r</left>
+            <top>159</top>
+            <height>861</height>
+            <onleft>5</onleft>
+            <onright>noop</onright>
+        </control>
+        <control type="button" id="20">
+            <texturenofocus diffuse="defaults/addonbuttondiffuse.png">defaults/button.png</texturenofocus>
+			<texturefocus diffuse="defaults/addonbuttondiffuse.png">defaults/buttonfocus.png</texturefocus>
+			<description>Settings Level</description>
+			<top>900</top>
+			<left>70</left>
+			<width>300</width>
+            <font>font34</font>
+            <onclick>SettingsLevelChange</onclick>
+			<onup>3</onup>
+        </control>
+    </controls>
+</window>
