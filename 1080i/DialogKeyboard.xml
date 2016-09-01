@@ -913,7 +913,7 @@
 				<font>size27</font>
 				
 				<label>$INFO[ListItem.Label]</label>
-			</contro
+			</control>
 		</focusedlayout>
 	</control>
     </controls>
