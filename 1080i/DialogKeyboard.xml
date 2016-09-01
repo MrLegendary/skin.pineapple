@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="103">
-    <defaultcontrol always="true">140</defaultcontrol>
+    <defaultcontrol always="true">300</defaultcontrol>
     <animation type="WindowOpen" reversible="false">
         <effect type="slide" start="0,600" end="0,0" easing="out" tween="back" time="400" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -793,72 +793,73 @@
                         <ondown>300</ondown>
                     </control>
                 </control>
-                <control type="grouplist">
+ 				<control type="grouplist">
                     <orientation>horizontal</orientation>
                     <itemgap>8</itemgap>
                     <top>200</top>
                     <control type="button" id="300">
                         <description>DONE button</description>
                         <width>320</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>20177</label>
                         <onup>302</onup>
+						<ondown>9091</ondown>
                     </control>
                     <control type="button" id="307">
                         <description>IP ADDRESS button</description>
                         <width>320</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>1006</label>
                         <textoffsetx>0</textoffsetx>
                         <onup>160</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                         <focusedcolor>black</focusedcolor>
                     </control>
                     <control type="button" id="32">
                         <description>SPACE button</description>
                         <width>320</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>20182</label>
                         <textoffsetx>0</textoffsetx>
                         <focusedcolor>black</focusedcolor>
                         <onleft>307</onleft>
                         <onright>305</onright>
                         <onup>163</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                      <control type="button" id="8">
                         <description>SPACE button</description>
                         <width>320</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>20181</label>
                         <textoffsetx>0</textoffsetx>
                         <focusedcolor>black</focusedcolor>
                         <onleft>307</onleft>
                         <onright>305</onright>
                         <onup>163</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                     <control type="button" id="305">
                         <description>PREVIOUS button</description>
                         <width>160</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>&lt;</label>
                         <focusedcolor>black</focusedcolor>
                         <onleft>32</onleft>
                         <onright>306</onright>
                         <onup>164</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                     <control type="button" id="306">
                         <description>NEXT button</description>
                         <width>160</width>
-                        <include>Keyboard2</include>
+                        <include>Keyboardbuttons</include>
                         <label>&gt;</label>
                         <focusedcolor>black</focusedcolor>
                         <onleft>305</onleft>
                         <onright>307</onright>
                         <onup>166</onup>
-                        <ondown></ondown>
+                        <ondown>9091</ondown>
                     </control>
                 </control>
             </control>
@@ -871,6 +872,50 @@
           <visible>!Skin.HasSetting(a)</visible>
           <onclick>Skin.ToggleSetting(a)</onclick>
         </control-->
+	<control type="list" id="9091">
+		<left>80</left>
+		<top>850</top>
+		<width>1760</width>
+		<height>750</height>
+		
+		<content limit="10">plugin://plugin.program.autocompletion?info=autocomplete&amp;&amp;id=$INFO[Control.GetLabel(312).Index(1)]</content>
+		<onup>300</onup>
+		<ondown>9091</ondown>
+		<onleft>9091</onleft>
+		<onright>9091</onright>
+		<onback>300</onback>
+		<orientation>horizontal</orientation>
+		<scrolltime tween="quadratic" easing="out">200</scrolltime>
+		<itemlayout height="48" width="250">
+			<control type="button">
+			<width>250</width> 
+			<height>48</height>
+			</control>
+			<control type="label">
+				<width>200</width>
+				<left>15</left>
+                	      	<width>225</width>
+				<height>48</height>
+				<font>size27</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>					
+		</itemlayout
+		<focusedlayout height="40" width="250">
+			<control type="button"> 
+				<width>250</width>
+				<height>48</height>
+			</control>
+			<control type="label">
+				<width>200</width>
+				<left>15</left>
+                       		<width>225</width>
+				<height>48</height>
+				<font>size27</font>
+				
+				<label>$INFO[ListItem.Label]</label>
+			</control
+		</focusedlayout>
+	</control>
     </controls>
 </window>
 
