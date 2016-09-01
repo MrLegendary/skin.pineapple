@@ -900,11 +900,11 @@
 				<label>$INFO[ListItem.Label]</label>
 			</control>					
 		</itemlayout
-		<focusedlayout height="40" width="250">
-			<control type="button"> 
-				<width>250</width>
-				<height>48</height>
-			</control>
+		<focusedlayout height="48" width="250">
+		<control type="button">
+			<width>230</width>
+			<height>48</height>
+		</control>
 			<control type="label">
 				<width>200</width>
 				<left>15</left>
@@ -913,7 +913,7 @@
 				<font>size27</font>
 				
 				<label>$INFO[ListItem.Label]</label>
-			</control
+			</contro
 		</focusedlayout>
 	</control>
     </controls>
