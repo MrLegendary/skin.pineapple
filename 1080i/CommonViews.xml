@@ -32,15 +32,14 @@
 	</control>	
   </include>
  <!-- HOME BANNER ANIMATION -->
-  <include name="homebanner_animation">	 
-	<animation condition="![Container(9000).Row(0)]" effect="slide" start="0,0" end="0,160" time="240">Conditonal</animation>
-	<animation condition="![Container(9000).Row(0) | Container(9000).Row(1)]" effect="slide" start="0,0" end="0,290" time="240">Conditonal</animation>
-	<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]" effect="slide" start="0,0" end="0,-290" time="240">Conditonal</animation>
-	<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4)]" effect="slide" start="0,0" end="0,290" time="240">Conditonal</animation>
-	<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5)]" effect="slide" start="0,0" end="0,-290" time="240">Conditonal</animation>
-	<animation condition="![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5) | Container(9000).Row(6)]" effect="slide" start="0,0" end="0,289" time="240">Conditonal</animation>
-  </include> 
   <include name="homebanner_static">	 
+	<animation condition="![Container(9000).Row(0)]" effect="slide" start="0,0" end="0,-278" time="350" tween="circle" easing="inout">Conditonal</animation>	
+    <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)" effect="slide" start="0,0" end="0,-268" time="350" tween="circle" easing="inout">Conditonal</animation>	
+    <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)" effect="slide" start="0,0" end="0,-270" time="350" tween="circle" easing="inout">Conditonal</animation>        
+	<animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)" effect="slide" start="0,0" end="0,-267" time="350" tween="circle" easing="inout">Conditonal</animation>	
+    <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)+!Container(9000).Row(4)" effect="slide" start="0,0" end="0,-250" time="350" tween="circle" easing="inout">Conditonal</animation>	
+  </include> 
+  <include name="homebanner_animation">	 
     <animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-131" time="220">Conditonal</animation>
 	<animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]]" effect="slide" start="0,0" end="0,-900" time="220">Conditonal</animation>
   </include>   
@@ -55,16 +54,14 @@
 	<texturenofocus border="8" colordiffuse="77FFFFFF">images/White.png</texturenofocus> 
   </include>    
   <include name="right_listpanel_unfocused">	    
-	<texture>-</texture>
+	<texture>defaults/listviewfocus.png</texture>
+	<colordiffuse>$VAR[52maincolorbutton]</colordiffuse>
   </include>
    <include name="right_listpanel_focused">	    
 	<texture>defaults/listviewfocus.png</texture>
   </include> 
   <include name="right_listpanel_focused_shadow">	
 	<texture>shadow.png</texture>
-  </include>
-  <include name="arrow">	
-	<texturenofocus>defaults/arrow.png</texturenofocus>
   </include> 
 <!--SEEKBAR BACKGROUND -->
   <include name="seekbar_bkgd">	
@@ -73,15 +70,18 @@
 	<!--texture colordiffuse="77D7D7D7">images/White.png</texture-->	
   </include>        
   <include name="DialogButt">
+    <animation effect="zoom" time="120" start="100" end="104,100" center="auto" tween="Back" easing="Out">Focus</animation>
     <width>576</width>
+    <hight>80</hight>
     <textoffsetx>0</textoffsetx>
     <align>center</align>
     <aligny>center</aligny>
     <font>font34</font>
     <disabledcolor>Grey</disabledcolor>
-    <alttexturenofocus colordiffuse="77FFFFFF">images/dialogbutt.png</alttexturenofocus>
-    <texturefocus>images/dialogbutt.png</texturefocus>
-    <alttexturefocus>images/dialogbutt.png</alttexturefocus>
+    <texturenofocus colordiffuse="$VAR[52maincolorbutton]">defaults/listviewfocus.png</texturenofocus>
+	<texturefocus colordiffuse="FFFFFFFF">defaults/listviewfocus.png</texturefocus>
+	<textcolor>$VAR[52maincolor]</textcolor>
+	<focusedcolor>Black</focusedcolor>
   </include>   
   <include name="Scrollanim">
     <animation condition="Control.HasFocus(60)" effect="fade" start="100" end="0" time="250" reversible="true">Conditional</animation>
@@ -447,21 +447,21 @@
     </control>
   </include>
   <include name="52MainLabel">
-    <left>45</left>
-    <height>70</height>
+    <left>22</left>
+    <height>65</height>
     <width>630</width>
     <aligny>center</aligny>
-    <font>font34</font>
-    <textcolor>textcolor</textcolor>
+    <font>font36</font>
+    <textcolor>$VAR[52maincolor]</textcolor>
     <shadowcolor>-</shadowcolor>
 	<scroll>false</scroll>
   </include>
   <include name="52MainLabelFO">
-    <left>45</left>
-    <height>70</height>
+    <left>22</left>
+    <height>65</height>
     <width>630</width>
     <aligny>center</aligny>
-    <font>font34</font>
+    <font>font36</font>
     <textcolor>textcolor</textcolor>
     <shadowcolor>-</shadowcolor>
 	<scroll>true</scroll>
@@ -530,7 +530,7 @@
     <scroll>false</scroll>
     <haspath>true</haspath>
     <align>right</align>
-    <textcolor>textcolor</textcolor>
+    <textcolor>$VAR[52maincolor]</textcolor>
     <shadowcolor>-</shadowcolor>
   </include>  
   <include name="HD_Badge">
@@ -624,10 +624,11 @@
     <control type="image" description="arrow">
       <visible>[Window.IsActive(Settings.xml) | ListItem.IsFolder] + ![StringCompare(ListItem.Label,..) | ListItem.IsCollection  | container.content(Movies) | container.content(TVshows) | container.content(Seasons) | container.content(Episodes) | container.content(musicvideos) | container.content(songs) | container.content(addons) | SubString(Container.FolderPath,plugin://,left)]</visible>
       <right>0</right>
-      <height>70</height>
+      <height>65</height>
       <width>54</width>
       <aspectratio>keep</aspectratio>
-      <texture>images/Arrow.png</texture>
+	  <!--colordiffuse>$VAR[52maincolor]</colordiffuse-->
+      <texture>$VAR[arrow]</texture>
     </control>
   </include>
   <include name="Sets">
@@ -1241,53 +1242,50 @@
     </control>
   </include>
   <include name="SlimListLayout">
-    <itemlayout width="802" height="81">
-      <control type="image">
-        <height>70</height>
-        <width>805</width>
-        <include>right_listpanel_unfocused</include>
-      </control>
-      <control type="image">
-        <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
-        <left>4</left>
-        <height>81</height>
-        <width>30</width>
-        <texture>$VAR[WatchStatus,overlay/List/]</texture>
-        <aspectratio>keep</aspectratio>
-      </control>
-      <include>HD_Badge</include>
-      <include>Arrow</include>
-      <control type="label" description="Main Label">
-        <visible>IntegerGreaterThan(ListItem.VideoResolution,700) | ListItem.IsFolder</visible>
-        <include>52MainLabel</include>
-        <label>$INFO[ListItem.Label]</label>
-      </control>
-      <control type="label" description="Main Label">
-        <visible>![IntegerGreaterThan(ListItem.VideoResolution,700) | ListItem.IsFolder]</visible>
-        <width>711</width>
-        <include>52MainLabel</include>
-        <label>$INFO[ListItem.Label]</label>
-      </control>
-      <control type="label" description="Label2">
-        <visible>container.content(songs) | container.content(musicvideos)</visible>
-        <include>52Label2</include>
-        <label>$INFO[ListItem.Duration]</label>
-      </control>
+    <itemlayout width="760" height="80">
+		<control type="image">
+			<height>68</height>
+			<width>760</width>
+			<include>right_listpanel_unfocused</include>
+        </control>
+        <include>Arrow</include>
+		<control type="image">
+			<visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
+			<left>4</left>
+			<height>81</height>
+			<width>30</width>
+			<texture>$VAR[WatchStatus,overlay/List/]</texture>
+			<aspectratio>keep</aspectratio>
+		</control>
+		<include>HD_Badge</include>
+		<control type="label" description="Main Label">
+			<visible>IntegerGreaterThan(ListItem.VideoResolution,700) | ListItem.IsFolder</visible>
+			<include>52MainLabel</include>
+			<label>$INFO[ListItem.Label]</label>
+		</control>
+		<control type="label" description="Main Label">
+			<visible>![IntegerGreaterThan(ListItem.VideoResolution,700) | ListItem.IsFolder]</visible>
+			<include>52MainLabel</include>
+			<label>$INFO[ListItem.Label]</label>
+		</control>
+		<control type="label" description="Label2">
+			<visible>container.content(songs) | container.content(musicvideos)</visible>
+			<include>52MainLabel</include>
+			<label>$INFO[ListItem.Duration]</label>
+		</control>
     </itemlayout>
-    <focusedlayout width="802" height="81">
+    <focusedlayout width="770" height="81">
       <control type="group">
-        <animation effect="zoom" time="120" start="100" end="105" center="auto" tween="Back" easing="Out">Focus</animation>
+        <animation effect="zoom" time="120" start="100" end="104,100" center="auto" tween="Back" easing="Out">Focus</animation>
         <control type="image">
-          <top>12</top>
-          <left>-50</left>
-          <height>70</height>
-          <width>905</width>
-          <include>right_listpanel_focused_shadow</include>
+            <height>68</height>
+            <width>760</width>
+            <include>right_listpanel_focused_shadow</include>
         </control>
         <control type="image">
-          <height>70</height>
-          <width>805</width>
-          <include>right_listpanel_focused</include>
+            <height>68</height>
+            <width>760</width>
+            <include>right_listpanel_focused</include>
         </control>
 		<control type="image">
 		  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
@@ -1317,5 +1315,5 @@
         </control>
       </control>
     </focusedlayout>
-  </include>
+  </include>  
 </includes>

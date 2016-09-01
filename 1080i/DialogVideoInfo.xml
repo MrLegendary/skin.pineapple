@@ -22,11 +22,29 @@
         <font>font26</font>
         <label>$INFO[Container(50).ListItem.Label]</label>
     </control>   
+	
 	<control type="image" description="Fanart">
       <include>VisibleFade</include>
 	  <texture>$INFO[Window(home).Property(VideoInfo.ImageFilter)]</texture>
 	  <!--colordiffuse>30FFFFFF</colordiffuse-->
     </control>	
+	<control type="image" description="Fanart">
+	  <texture>$INFO[Window(Home).Property(SkinHelper.MovieSet.X.ClearLogo)]</texture>
+	  <!--colordiffuse>30FFFFFF</colordiffuse-->
+    </control>	
+	
+		<control type="label" id="7777" description="Heading">
+        <centerleft>960</centerleft>
+        <top>96</top>
+        <width>1920</width>
+        <height>35</height>
+        <font>font45B</font>
+        <textcolor>$VAR[heading]</textcolor>
+        <shadowcolor>-</shadowcolor>
+        <align>center</align>
+        <scroll>false</scroll>
+        <label>$INFO[Window(Home).Property(SkinHelper.MovieSet.X.ClearLogo)]</label>
+    </control>
 
     <control type="image">     
 	    <top>740</top>

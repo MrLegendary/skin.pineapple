@@ -226,61 +226,7 @@
       </control>
     </control>
     <control type="group" description="Side menu 9000 group">
-      <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
-      <include>DialogOpenCloseVisible</include>
-      <control type="image" description="List back">
-        <centerleft>960</centerleft>
-        <centertop>540</centertop>
-        <width>802</width>
-        <height>606</height>
-        <aspectratio>stretch</aspectratio>
-        <texture border="50">images/ContextMenu.png</texture>
-      </control>
-      <control type="grouplist" id="9000">
-        <centerleft>960</centerleft>
-		<top>354</top>
-		<width>576</width>
-		<height>400</height>
-		<itemgap>10</itemgap>
-		<onleft>50</onleft>
-		<onright>50</onright>
-		<onup>9000</onup>
-		<ondown>9000</ondown>
-		<scrolltime>200</scrolltime>
-		<orientation>vertical</orientation>
-        <control type="button" id="2" description="Views">
-          <include>DialogButt</include>
-        </control>
-        <control type="button" id="3" description="Sort">
-          <include>DialogButt</include>
-        </control>
-        <control type="button" id="6" description="Slideshow">
-          <disabledcolor>Disabled</disabledcolor>
-          <include>DialogButt</include>
-          <label>108</label>
-          <visible>!ListItem.IsFolder</visible>
-        </control>
-        <control type="button" id="7" description="Recursive slideshow">
-          <disabledcolor>Disabled</disabledcolor>
-          <include>DialogButt</include>
-          <label>13318</label>
-          <visible>ListItem.IsFolder</visible>
-        </control>
-        <control type="radiobutton" id="9" description="Randomize">
-          <include>DialogButt</include>
-          <label>13319</label>
-        </control>
-        <control type="togglebutton" id="699" description="Playing">
-          <enable>Player.HasMedia</enable>
-          <include>DialogButt</include>
-          <label>$LOCALIZE[16003]</label>
-          <altlabel>$LOCALIZE[31055]</altlabel>
-          <usealttexture>Player.HasMedia</usealttexture>
-          <onclick>fullscreen</onclick>
-          <altclick>fullscreen</altclick>
-          <animation effect="fade" start="100" end="60" time="100" condition="!Player.HasMedia">Conditional</animation>
-        </control>
-      </control>
+      <include>menu9000</include>
     </control>
     <include>WindowsTopInfos</include>
   </controls>

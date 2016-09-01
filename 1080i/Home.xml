@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>	
-    <backgroundcolor>Background</backgroundcolor>
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <onload>RunScript(script.favourites)</onload>
 	<onload>RunScript(script.colorbox)</onload>
     <onload>SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
 	<onload condition="!Skin.HasSetting(FirstTimeRun)">ActivateWindow(1119)</onload>
-    <include>OpenClose</include>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000)</onload>
+    <include>HomeOpenClose</include>
     <controls>
         <control type="group" description="Furniture">		
 		  <visible>!Player.HasVideo</visible>		  
 		  <control type="group" description="DEFAULT BG HOME">
             <!--animation condition="!Container(9000).Row(0) | Container(9000).HasPrevious()" effect="slide" start="0,0" end="0,-590" time="220">Conditonal</animation-->			
-            <control type="image" description="Home Background">
+			<control type="image" description="Home Background">
 				<animation condition="[!Container(9000).Row(0) | Container(9000).HasPrevious()] + (!Skin.HasTheme(White) | !Skin.HasTheme(Dark) | !Skin.HasTheme(Light) | !Skin.HasTheme(Extra Light))" effect="slide" start="0,0" end="0,-590" time="220">Conditonal</animation>			
 				<visible>IsEmpty(Skin.String(CustomBgHome))</visible>
                 <width>1920</width>
@@ -24,7 +24,7 @@
             <!--control type="image">	
                 <width>1920</width>
                 <height>1080</height>
-                <texture>test1.png</texture>
+                <texture>test2.jpg</texture>
             </control-->			
 			<control type="label" description="Clock">		
 				<visible>!Skin.HasSetting(ShowClock) + !System.Date(04-01,04-01) + Container(9000).Row(0)</visible>
@@ -38,16 +38,16 @@
 				<shadowcolor>-</shadowcolor>
 				<label>$INFO[System.Date] • $INFO[System.Time]</label>
 			</control>						
-            <control type="image" description="Home ICON Banner">
-				<animation condition="!Container(9000).Row(0) | Container(9000).HasPrevious()" effect="slide" start="0,0" end="0,-590" time="220">Conditonal</animation>						
+            <control type="image" description="Home ICON Banner">											
 				<visible>IsEmpty(Skin.String(CustomBgHome)) + !Skin.HasSetting(NoHomeBanner)</visible>				
-				<include condition="Skin.HasSetting(NoBannerAnimation)">homebanner_animation</include>				
+				<!--include condition="Skin.HasSetting(NoBannerAnimation)">homebanner_animation</include-->				
 				<include condition="!Skin.HasSetting(NoBannerAnimation)">homebanner_static</include>										
-                <top>715</top>
+                <top>718</top>
                 <width>1920</width>
                 <height>283</height>
                 <aspectratio>stretch</aspectratio>
-                <texture colordiffuse="77FFFFFF">images/white.png</texture>
+                <texture>images/white.png</texture>
+                <colordiffuse>$VAR[homebanner]</colordiffuse>
             </control>		
 	      </control>	
 		  <control type="group" description="CUSTOM BG HOME">
@@ -77,6 +77,16 @@
 			<visible>Window.IsActive(Home.xml) + Player.HasVideo</visible>
 			<aspectratio>scale</aspectratio>
 		</control>	
+		<control type="image" description="homelogo">	
+			<animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-265" time="350"  tween="circle" easing="inout">Conditional</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)" effect="slide" start="0,0" end="0,-268" time="350" tween="circle" easing="inout">Conditonal</animation>	
+			<visible>!Control.IsVisible(9009)+!Control.IsVisible(311)+!Control.IsVisible(312)+!Control.IsVisible(313)+!Control.IsVisible(319)+[Container(9000).Row(0)|Container(9000).Row(1)|Container(9000).Row(2)]</visible> //+!Control.IsVisible(319)+Container(9000).Row(0)|Control.IsVisible(315)|!Control.IsVisible(317)+!Control.IsVisible(345) +
+			<centerleft>960</centerleft>
+			<centertop>450</centertop>
+            <width>960</width>
+            <height>540</height>
+            <texture colordiffuse="$VAR[homelogocolor]">logos/homelogo.png</texture>
+        </control>
         <control type="label" description="Shelf Label">
 			<visible>!Control.HasFocus(9009) + Control.HasFocus(9000) + !Player.HasVideo</visible>		
 			<animation effect="fade" end="100" delay="200" time="220">Visible</animation>
@@ -267,10 +277,20 @@
 			</content>
 		</control>			
         <control type="panel" id="9000" description="ICON">
-            <animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-720" time="220">Conditonal</animation>	
-            <animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2)]]" effect="slide" start="0,0" end="0,-580" time="220">Conditonal</animation>	
-            <animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3)]]" effect="slide" start="0,0" end="0,-290" time="220">Conditonal</animation>			
-            <animation condition="[![Container(9000).Row(0) | Container(9000).Row(1) | Container(9000).Row(2) | Container(9000).Row(3) | Container(9000).Row(4) | Container(9000).Row(5)]]" effect="slide" start="0,0" end="0,-580" time="220">Conditonal</animation>	
+			<include>mainmenu-position-and-appearance</include>
+			<content><include>skinshortcuts-mainmenu</include></content>
+            <animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-265" time="350" tween="circle" easing="inout">Conditional</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)" effect="slide" start="0,0" end="0,-268" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)" effect="slide" start="0,0" end="0,-270" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)" effect="slide" start="0,0" end="0,-267" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)+!Container(9000).Row(4)" effect="slide" start="0,0" end="0,-250" time="350" tween="circle" easing="inout">Conditonal</animation>
+			
+			<!--animation condition="!Container(9000).Row(0)" effect="slide" start="0,0" end="0,-265" time="350" tween="circle" easing="inout">Conditional</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)" effect="slide" start="0,0" end="0,-268" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)" effect="slide" start="0,0" end="0,-270" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)" effect="slide" start="0,0" end="0,-267" time="350" tween="circle" easing="inout">Conditonal</animation>	
+            <animation condition="!Container(9000).Row(0)+!Container(9000).Row(1)+!Container(9000).Row(2)+!Container(9000).Row(3)+!Container(9000).Row(4)" effect="slide" start="0,0" end="0,-250" time="350" tween="circle" easing="inout">Conditonal</animation-->
+			
             <centerleft>960</centerleft>
             <top>710</top>
             <width>1800</width>
@@ -281,7 +301,7 @@
             <ondown>noop</ondown>
             <orientation>vertical</orientation>
             <scrolltime tween="sine" easing="inout">280</scrolltime>
-            <itemlayout height="290" width="360">
+            <itemlayout height="269" width="360">
                 <control type="image" description="shade_base">
                     <centerleft>180</centerleft>
 					<top>37</top>
@@ -322,8 +342,8 @@
                 </control>				
                 <control type="label" description="label">
 					<visible>!Player.HasVideo + Skin.HasSetting(NoFocusNoLabel)</visible>
-                    <!--animation effect="fade" start="0" end="100" time="150" delay="50">Focus</animation-->
-                    <animation effect="fade" start="100" end="0" time="100">unFocus</animation>					
+                    <!--animation effect="fade" start="0" end="100" time="150" delay="50">Focus</animation->
+                    <animation effect="fade" start="100" end="0" time="100">unFocus</animation-->					
                     <centerleft>180</centerleft>
                     <top>252</top>
                     <width>350</width>
@@ -337,8 +357,8 @@
             </itemlayout>
             <focusedlayout height="290" width="360">
                 <control type="group">												
-                    <!--animation effect="zoom" start="100" end="130" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
-                    <animation effect="zoom" start="130" end="100" time="120" center="auto">unFocus</animation-->															
+                    <animation effect="zoom" start="100" end="130" time="350" center="auto" tween="back" easing="out">Focus</animation>
+                    <animation effect="zoom" start="130" end="100" time="120" center="auto">unFocus</animation>															
 					<include condition="!Skin.HasSetting(ATV3select)">ATV4select</include>										
                     <control type="image" description="shade_base">
                         <centerleft>180</centerleft>
@@ -349,7 +369,7 @@
                     </control>
                     <control type="image" description="color base">
                         <centerleft>180</centerleft>
-                        <top>27</top>
+                        <top>45</top>
                         <width>287</width>
                         <height>179</height>
                         <texture diffuse="icons/diffusehomeicon.png">$INFO[ListItem.Property(color)]</texture>
@@ -359,7 +379,7 @@
                         <centerleft>180</centerleft>
                         <top>45</top>
                         <width>287</width>
-                        <height>175</height>
+                        <height>179</height>
                         <texture diffuse="icons/diffusehomeicon.png">$INFO[ListItem.thumb]</texture>
                     </control>
                     <control type="image" description="THMBSICONS">
@@ -367,7 +387,7 @@
                         <centerleft>180</centerleft>
                         <top>45</top>
                         <width>287</width>
-                        <height>175</height>
+                        <height>179</height>
                         <texture diffuse="icons/diffusehomeicon.png">$INFO[ListItem.label2]</texture>
                     </control>
                     <control type="image" description="THMBS weather">
@@ -790,10 +810,16 @@
 					<property name="color">special://skin/icons/quits.png</property>
                 </item>						
             </content>
-        </control>	
-        <!--ATV3 SLIDER-->
+        </control>
+		
+		<!--control type="panel" id="9000" description="ICON">
+			<include>mainmenu-position-and-appearance</include>
+			<content><include>skinshortcuts-mainmenu</include></content>
+        </control-->
+
+		<!--ATV3 SLIDER-->
 		<include condition="Skin.HasSetting(ATV3select)">ATV3select</include>		
-	  <control type="group" description="SHELF">	
+		<control type="group" description="SHELF">	
 		<visible>!Player.HasVideo</visible>
         <include>weather_shelf</include>
         <control type="group" id="700" description="Shelf items">
@@ -838,8 +864,7 @@
                 <headlinecolor>textcolor2</headlinecolor>
                 <textcolor>textcolor2</textcolor>
             </control>
-
-        </control>
+		</control>
         <control type="group" description="Player Info">
             <visible>Player.HasAudio</visible>
             <visible>!IntegerGreaterThan(Player.Time,8) | !IntegerGreaterThan(Player.TimeRemaining,8)</visible>

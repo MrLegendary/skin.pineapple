@@ -83,6 +83,12 @@
             <filename>SystemRegular.ttf</filename>
             <size>24</size>
         </font>
+		<font>
+            <name>font24B</name>
+            <filename>SystemRegular.ttf</filename>
+            <size>24</size>
+			<style>bold</style>
+        </font>
         <font>
             <name>font25</name>
             <filename>SystemRegular.ttf</filename>
@@ -112,6 +118,12 @@
             <name>font30</name>
             <filename>SystemRegular.ttf</filename>
             <size>30</size>
+        </font>
+        <font>
+            <name>font30B</name>
+            <filename>SystemRegular.ttf</filename>
+            <size>30</size>
+			<style>bold</style>
         </font>
         <font>
             <name>font31</name>
@@ -185,12 +197,7 @@
             <filename>SystemRegular.ttf</filename>
             <size>42</size>
         </font>
-		<font>
-            <name>font45B</name>
-            <filename>SystemRegular.ttf</filename>
-            <size>45</size>
-			<style>bold</style>
-        </font>
+
         <font>
             <name>font43</name>
             <filename>SystemRegular.ttf</filename>
@@ -200,11 +207,23 @@
             <name>font44</name>
             <filename>SystemRegular.ttf</filename>
             <size>44</size>
+        </font>       
+		<font>
+            <name>font44B</name>
+            <filename>SystemRegular.ttf</filename>
+            <size>44</size>
+			<style>bold</style>
         </font>
         <font>
             <name>font45</name>
             <filename>SystemRegular.ttf</filename>
             <size>45</size>
+        </font>
+		<font>
+            <name>font45B</name>
+            <filename>SystemRegular.ttf</filename>
+            <size>45</size>
+			<style>bold</style>
         </font>
     </fontset>	
 	<fontset id="Bold">

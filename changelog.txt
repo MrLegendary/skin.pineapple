@@ -1,6 +1,12 @@
+0.0.7
+-NEW Notification
+-NEW 
+
 0.0.6
 -FIX Skin Settings Option (missing label)
 -FIX Changelog Textsize
+-NEW Homescreen Folders
+-NEW Shelf Icons
 
 
 0.0.5

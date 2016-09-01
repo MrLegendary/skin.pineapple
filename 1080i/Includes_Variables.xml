@@ -260,9 +260,10 @@
 		<value condition="Container(9000).HasFocus(625)">$INFO[Skin.String(HomeFav.105.Label)]</value>		
     </variable>
 	
-	
-
-	
+	<variable name="MusicPlayerClearLogo">
+		<value condition="!IsEmpty(MusicPlayer.Artist) + !substring(Container.FolderPath,plugin://)">$INFO[Player.FolderPath,,../logo.png]</value>
+		<value condition="!IsEmpty(Player.Art(clearlogo))">$INFO[Player.Art(clearlogo)]</value>
+	</variable>
 	
     <variable name="shelfchoose">
         <!--MOVIES-->
@@ -287,13 +288,50 @@
 	<!--colors-->
 	<variable name="xx">
        <value condition="Skin.HasTheme(Dark)">White3</value>
-       <value condition="Skin.HasTheme(Light)">Grey4</value>
-	   <value condition="Skin.HasTheme(Extra Light)">Grey4</value>
-	   <value condition="Skin.HasTheme(Textures)">Grey4</value>
+       <value condition="!Skin.HasTheme(Dark)">Grey4</value>
     </variable>
 	<variable name="cancel">
        <value condition="Skin.HasTheme(Dark)">White3</value>
-       <value condition="Skin.HasTheme(Light)">Grey4</value>
-	   <value condition="Skin.HasTheme(Extra Light)">Grey4</value>
+       <value condition="!Skin.HasTheme(Dark)">Grey4</value>
+    </variable>
+	<variable name="homelogocolor">
+       <value condition="Skin.HasTheme(Dark)">77FFFFFF</value>
+       <value condition="!Skin.HasTheme(Dark)">77767676</value>
+    </variable>		
+	<variable name="homebanner">
+       <value condition="Skin.HasTheme(Dark)">HomebannerDark</value>
+       <value condition="!Skin.HasTheme(Dark)">Homebanner</value>
+    </variable>	
+	<variable name="notificationbanner">
+       <value condition="Skin.HasTheme(Dark)">NotificationBannerDark</value>
+       <value condition="!Skin.HasTheme(Dark)">NotificationBanner</value>
+    </variable>	
+	<variable name="52maincolor">
+       <value condition="Skin.HasTheme(Dark)">ListmaincolorDark</value>
+       <value condition="!Skin.HasTheme(Dark)">Listmaincolor</value>
+    </variable>
+	<variable name="notificationtext">
+       <value condition="!Skin.HasTheme(Dark)">ListmaincolorDark</value>
+       <value condition="Skin.HasTheme(Dark)">Listmaincolor</value>
+    </variable>		
+	<variable name="52maincolorbutton">
+       <value condition="Skin.HasTheme(Dark)">ListmaincolorDarkButton</value>
+       <value condition="!Skin.HasTheme(Dark)">ListmaincolorButton</value>
+    </variable>	
+	<variable name="settingsicon">
+       <value condition="Skin.HasTheme(Dark)">SettingsIconDark</value>
+       <value condition="!Skin.HasTheme(Dark)">SettingsIcon</value>
+    </variable>	
+	<variable name="heading">
+       <value condition="Skin.HasTheme(Dark)">HeadingDark</value>
+       <value condition="!Skin.HasTheme(Dark)">Heading</value>
+    </variable>	
+	<variable name="arrow">
+       <value condition="Skin.HasTheme(Dark)">images/arrowwhite.png</value>
+       <value condition="!Skin.HasTheme(Dark)">images/arrow.png</value>
+    </variable>	
+	<variable name="9000menu">
+       <value condition="!Skin.HasTheme(Dark)">images/ContextMenu.png</value>
+       <value condition="Skin.HasTheme(Dark)">contextmenudark.png</value>
     </variable>
 </includes>

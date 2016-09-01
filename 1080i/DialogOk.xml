@@ -4,7 +4,8 @@
   <defaultcontrol always="true">10</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <include>DialogOpenClose</include>
-  <controls> 
+  <controls>
+	<include>Background</include>  
     <control type="image">
       <centerleft>960</centerleft>
       <centertop>540</centertop>
@@ -13,27 +14,29 @@
       <texture border="50">ContextMenu.png</texture>
     </control>  
     <control type="group">
-      <left>480</left>
       <top>350</top>
       <control type="label" id="1" description="Heading">
-        <width>960</width>
+        <width>1920</width>
         <label>-</label>
-        <font>size33B</font>
         <align>center</align>
-		<textcolor>textcolor2</textcolor>
+        <font>font33B</font>
+		<textcolor>$VAR[heading]</textcolor>
       </control>
       <control type="textbox" id="9" description="content">
         <top>75</top>
-        <width>960</width>
+        <width>1920</width>
 		<height>185</height>
         <align>center</align>
+		<textcolor>$VAR[heading]</textcolor>
         <label>-</label>
       </control>
       <control type="button" id="10" description="Ok">
-        <left>330</left>
+        <centerleft>960</centerleft>
         <top>330</top>
         <width>300</width>
         <label>186</label>
+		<include>DialogButt</include> 
+		<textcolor>$VAR[heading]</textcolor>
       </control>
     </control>
   </controls>

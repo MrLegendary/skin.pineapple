@@ -35,7 +35,8 @@
 			<aspectratio>keep</aspectratio>
 		  </control>
       <control type="button" id="10" description="Cancel">
-        <left>330</left>
+        <include>DialogButt</include>
+        <left>200</left>
         <top>330</top>
         <width>300</width>
         <label>222</label>

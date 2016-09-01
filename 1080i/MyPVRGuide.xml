@@ -15,7 +15,7 @@
             <description>passes the values up one level</description>
             <visible>False</visible>
         </control>								
-<!-- EPG - VIDEO PREVIEW -->		
+		<!-- EPG - VIDEO PREVIEW -->		
         <control type="group">
             <description>Timeline Media Window</description>
             <visible>Control.IsVisible(10)</visible>
@@ -719,6 +719,8 @@
 			<textcolor>textcolor2</textcolor>			
             <label>$INFO[Control.GetLabel(29)] • $INFO[Control.GetLabel(30)]</label>
         </control>
-        <include>PVRsidemenu</include>
+        <control type="group" description="Side menu 9000 group">
+            <include>menu9000</include>
+        </control>
     </controls>
 </window>

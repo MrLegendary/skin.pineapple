@@ -3,6 +3,7 @@
 	<color name="Grey2">FFBEBEBE</color>
 	<color name="Grey3">FFACACAC</color>
 	<color name="Grey4">FF404040</color> <!--DARK GREY-->
+	<color name="Greymusic">FF303A3B</color> <!--Music Buttons-->
 	<color name="White2">FFEEEEEE</color>  <!-- TO CHANGE TO textcolor3 -->
 	<color name="White3">FFFFFFFF</color><!-- TEMP - CHANGE - WILL BE DEFAULT WHITE -->
 	<color name="Red">FFFF0000</color>
@@ -22,10 +23,25 @@
 	<color name="detailsFO">FF969696</color> <!-- DETAILS - FOCUSED  -->
 	
 	<color name="seekbuttonNF">FFEAEAEA</color> <!-- SEEKBAR BUTTON - UNFOCUSED  -->
-	<color name="seekbuttonFO">FFFFFFFF</color> <!-- SEEKBAR BUTTON - FOCUSED  -->	
+	<color name="seekbuttonFO">FFFFFFFF</color> <!-- SEEKBAR BUTTON - FOCUSED  -->		
 	
-	<color name="homelabelNF">FFFFFFFF</color>  <!-- HOME LABEL NOT FOCUSED -->	
-	<color name="homelabelFO">FFEEEEEE</color>  <!-- HOME LABEL FOCUSED -->	
+	<color name="ListmaincolorDark">88FFFFFF</color> <!-- 52 Fixedlist DarkTheme LABEL COLOR  -->
+	<color name="Listmaincolor">FF000000</color> 	   <!-- 52 Fixedlist DefaultTheme LABEL COLOR  -->		
+	
+	<color name="ListmaincolorDarkButton">77000000</color> <!-- 52 Fixedlist DarkTheme Button COLOR -->	
+	<color name="ListmaincolorButton">77FFFFFF</color> <!-- 52 Fixedlist DarkTheme Button COLOR-->	
+	
+	<color name="HomebannerDark">77000000</color> <!-- 52 Fixedlist DarkTheme Button COLOR -->	
+	<color name="Homebanner">77FFFFFF</color> <!-- 52 Fixedlist DarkTheme Button COLOR-->
+	
+	<color name="SettingsIconDark">FF404040</color> <!-- 52 Fixedlist DarkTheme LABEL COLOR  -->
+	<color name="SettingsIcon">77404040</color> 	   <!-- 52 Fixedlist DefaultTheme LABEL COLOR  -->	
+	
+	<color name="HeadingDark">88FFFFFF</color> <!-- 52 Fixedlist DarkTheme LABEL COLOR  -->
+	<color name="Heading">FF404040</color> 	   <!-- 52 Fixedlist DefaultTheme LABEL COLOR  -->	
+	
+	<color name="homelabelNF">FFFFFFFF</color>  <!-- HOME Banner Dark -->	
+	<color name="homelabelFO">FFEEEEEE</color>  <!-- HOME Banner -->	
 	
 	
 	<color name="ShelfTopLabelNF">77FFFFFF</color> <!-- TOP SHELF LABEL - UNFOCUSED  - -  -->			
@@ -47,5 +63,5 @@
 	<color name="Shadow">70000000</color>
 	<color name="ShadowDark">FF262626</color>
 	<color name="Yellow">FFFA9600</color>
-	<color name="Background">FF000000</color>	
+	<color name="Background">77000000</color>	
 </colors>

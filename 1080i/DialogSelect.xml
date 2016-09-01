@@ -6,7 +6,7 @@
   <controls>
     <include>Background</include>
     <control type="label" id="1" description="Header label">
-      <include>HeadingR</include>
+      <include>Heading2</include>
       <label>13406</label>
     </control>
     <control type="list" id="3">
@@ -23,22 +23,22 @@
       <include>SlimListLayout</include>
     </control>
     <control type="list" id="6">
-      <left>1020</left>
-      <top>140</top>
+      <left>1060</left>
+      <top>165</top>
       <width>802</width>
-      <height>886</height>
+      <height>880</height>
       <onleft>5</onleft>
       <onright>60</onright>
       <onup>6</onup>
       <ondown>5</ondown>
       <pagecontrol>60</pagecontrol>
-      <movement>3</movement>
+      <movement>5</movement>
       <scrolltime tween="sine" easing="inout">280</scrolltime>
       <include>SlimListLayout</include>
     </control>
     <control type="image" description="Item Thumb">
       <centerleft>520</centerleft>
-      <centertop>430</centertop>
+      <centertop>470</centertop>
       <width>600</width>
       <height>600</height>
       <fadetime>200</fadetime>
@@ -57,13 +57,16 @@
         <aspectratio>stretch</aspectratio>
       </control>-->
       <control type="button" id="5" description="Manual Get more button">
-        <left>1000</left>
+        <left>1060</left>
+		<width>760</width>
+		<height>68</height>
         <bottom>60</bottom>
-        <width>855</width>
         <font>font36</font>
         <label>-</label>
-		<texturefocus diffuse="defaults/addonsettingdiffuse.png">defaults/buttonfocus.png</texturefocus>
-		<texturenofocus diffuse="defaults/addonsettingdiffuse.png">defaults/button.png</texturenofocus>
+		<texturenofocus colordiffuse="$VAR[52maincolorbutton]">defaults/listviewfocus.png</texturenofocus>
+		<texturefocus colordiffuse="FFFFFFFF">defaults/listviewfocus.png</texturefocus>
+		<textcolor>$VAR[52maincolor]</textcolor>
+		<focusedcolor>Black</focusedcolor>
         <onleft>3</onleft>
         <onright>3</onright>
         <onup>3</onup>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <includes>
     <include name="Videoviews">
-        <!--SMALL LIST-->
+        <!--SMALL LIST 50-->
         <control type="group" description="List">
             <visible>Control.IsVisible(50)</visible>
             <include>left_Panel_plain</include>
             <control type="group" description="Slider and List">
                 <include>SlimListItemCount</include>
-                <left>1020</left>
-                <top>131</top>
+                <left>1060</left>
+				<top>165</top>
                 <control type="fixedlist" id="50">
-                    <width>802</width>
-                    <height>891</height>
+                    <width>760</width>
+					<height>880</height>
                     <onleft condition="!Skin.HasSetting(ViewsMenuOff)">9000</onleft>
                     <onleft condition="Skin.HasSetting(ViewsMenuOff)">50</onleft>
                     <onright condition="Skin.HasSetting(Scrollbars_Active)">60</onright>
@@ -19,17 +19,16 @@
                     <onup>50</onup>
                     <ondown>50</ondown>
                     <pagecontrol>60</pagecontrol>
-                    <viewtype label="535">List</viewtype>
                     <focusposition>5</focusposition>
                     <movement>5</movement>
                     <preloaditems>4</preloaditems>
-                    <scrolltime>250</scrolltime>
-                    <itemlayout condition="SubString(Container.FolderPath,plugin://,left)" width="802" height="81">
+                    <scrolltime>280</scrolltime>
+                    <itemlayout condition="SubString(Container.FolderPath,plugin://,left)" width="760" height="80">
                         <control type="image">
-                            <height>70</height>
-                            <width>805</width>
-                            <include>right_listpanel_unfocused</include>
-                        </control>						
+							<height>68</height>
+							<width>760</width>
+							<include>right_listpanel_unfocused</include>
+						</control>					
 						<control type="image">
 						  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 						  <left>4</left>
@@ -39,26 +38,23 @@
 						  <aspectratio>keep</aspectratio>
 						</control>					
                         <control type="label" description="Main Label">
-                            <width>720</width>
-                            <include>52MainLabel</include>
-                            <label>$INFO[ListItem.Label]</label>
-                        </control>
+							<include>52MainLabel</include>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
                     </itemlayout>
-                    <focusedlayout condition="SubString(Container.FolderPath,plugin://,left)" width="802" height="81">
+                    <focusedlayout condition="SubString(Container.FolderPath,plugin://,left)" width="770" height="81">
                         <control type="group">
-                            <animation effect="zoom" time="120" start="100" end="105" center="auto" tween="Back" easing="Out">Focus</animation>
+                            <animation effect="zoom" time="120" start="100" end="104,100" center="auto" tween="Back" easing="Out">Focus</animation>
                             <control type="image">
-                                <top>12</top>
-                                <left>-50</left>
-                                <height>70</height>
-                                <width>905</width>
-                                <include>right_listpanel_focused_shadow</include>
-                            </control>
+								<height>68</height>
+								<width>760</width>
+								<include>right_listpanel_focused_shadow</include>
+							</control>
                             <control type="image">
-                                <height>70</height>
-                                <width>805</width>
-                                <include>right_listpanel_focused</include>
-                            </control>
+								<height>68</height>
+								<width>760</width>
+								<include>right_listpanel_focused</include>
+							</control>
 							<control type="image" description="WatchedMark">
 							  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 							  <left>4</left>
@@ -68,18 +64,17 @@
 							  <aspectratio>keep</aspectratio>
 							</control>
                             <control type="label" description="Main Label">
-                                <width>720</width>
-                                <include>52MainLabelFO</include>
-                                <label>$INFO[ListItem.Label]</label>
-                            </control>
+								<include>52MainLabelFO</include>
+								<label>$INFO[ListItem.Label]</label>
+							</control>
                         </control>
                     </focusedlayout>
-                    <itemlayout width="802" height="81">
+                    <itemlayout width="760" height="80">
                         <control type="image">
-                            <height>70</height>
-                            <width>805</width>
-                            <include>right_listpanel_unfocused</include>
-                        </control>
+							<height>68</height>
+							<width>760</width>
+							<include>right_listpanel_unfocused</include>
+						</control>
 						<control type="image" description="WatchedMark">
 						  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 						  <left>4</left>
@@ -97,7 +92,6 @@
                         </control>
                         <control type="label" description="Main Label">
                             <visible>![IntegerGreaterThan(ListItem.VideoResolution,700) | ListItem.IsFolder]</visible>
-                            <width>711</width>
                             <include>52MainLabel</include>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
@@ -107,21 +101,19 @@
                             <label>$INFO[ListItem.Duration]</label>
                         </control>
                     </itemlayout>
-                    <focusedlayout width="802" height="81">
+                    <focusedlayout  width="770" height="81">
                         <control type="group">
-                            <animation effect="zoom" time="120" start="100" end="105" center="auto" tween="Back" easing="Out">Focus</animation>
+                            <animation effect="zoom" time="120" start="100" end="104,100" center="auto" tween="Back" easing="Out">Focus</animation>
                             <control type="image">
-                                <top>12</top>
-                                <left>-50</left>
-                                <height>70</height>
-                                <width>905</width>
-                                <include>right_listpanel_focused_shadow</include>
-                            </control>
+								<height>68</height>
+								<width>760</width>
+								<include>right_listpanel_focused_shadow</include>
+							</control>
                             <control type="image">
-                                <height>70</height>
-                                <width>805</width>
-                                <include>right_listpanel_focused</include>
-                            </control>
+								<height>68</height>
+								<width>760</width>
+								<include>right_listpanel_focused</include>
+							</control>
 							<control type="image" description="WatchedMark">
 							  <visible>Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Movies) | Container.Content(episodes) | Control.IsVisible(13) | Control.IsVisible(10)</visible>
 							  <left>4</left>
@@ -161,7 +153,7 @@
                 <onleft>50</onleft>
             </control>
         </control>
-        <!--BIG LIST -->
+        <!--BIG LIST 51-->
         <control type="group" description="BigList">
             <visible>Control.IsVisible(51)</visible>
             <include>left_Panel</include>
@@ -198,7 +190,7 @@
                 <onright>noop</onright>
             </control>
         </control>
-        <!--ICONVIEW-->
+        <!--ICONVIEW 53-->
         <control type="group" description="Icons view">
             <visible>Control.IsVisible(53)</visible>
             <control type="group">
@@ -549,7 +541,7 @@
                 <onright>noop</onright>
             </control>
         </control>
-        <!--BANNERS-->
+        <!--BANNERS 55-->
         <control type="group" description="BANNERS">
             <visible>Control.IsVisible(55)</visible>
             <control type="group" description="Container and frame">
@@ -757,7 +749,7 @@
                 <onright>9000</onright>
             </control>
         </control>
-        <!--FANART-->
+        <!--FANART 500-->
         <control type="group" description="Fanart">
             <visible>Control.IsVisible(500)</visible>
             <control type="image">
@@ -1011,7 +1003,7 @@
                 <showonepage>false</showonepage>
             </control>
         </control>				
-        <!--COVERFLOW-->				
+        <!--COVERFLOW 501-->				
 		<control type="group" description="Coverflow">
 			<visible>Control.IsVisible(501)</visible>				
 			<control type="group" description="Coverflow Furniture">
@@ -1209,7 +1201,7 @@
 				</control>			
 			</control>			
 		</control>
-        <!--SIO2VIEW-->		
+        <!--SIO2VIEW 52-->		
         <control type="group" description="sio2view">
             <visible>Control.IsVisible(52)</visible>
 			<animation type="Conditional" condition="Control.HasFocus(60)">
@@ -1871,8 +1863,8 @@
 						<onright>noop</onright>
 					</control>
 				</control>					
-			</control>
-		<!-- 3D WALL -->	
+		</control>
+		<!-- 3D WALL 54-->	
 		<control type="group">
 				<visible>Control.IsVisible(54)</visible>
 				<control type="group">
@@ -2317,7 +2309,7 @@
 				</control>
 			</control>	
 			<!-- PAGE COUNT -->		
-		<!--	<control type="label">
+		<!--<control type="label">
 			<visible>![Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54)]</visible>
 				<description>Page Count Label</description>
 				<right>40</right>

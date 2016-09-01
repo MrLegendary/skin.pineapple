@@ -10,12 +10,19 @@
     <include file="Includes_Shelf.xml" />	
     <include file="Includes_Coverflow.xml" />
     <include file="Includes_3dwall.xml" />	
+	<include file="script-skinshortcuts-includes.xml" />
     <include name="VisibleFade">
         <animation effect="fade" start="0" end="100" time="150">VisibleChange</animation>
     </include>
     <include name="OpenClose">
         <animation effect="fade" time="120">WindowOpen</animation>
-        <animation effect="fade" time="120">WindowClose</animation>
+        <animation effect="fade" time="320">WindowClose</animation>
+    </include>    
+	<include name="HomeOpenClose">
+		<animation type="WindowOpen">
+		 <effect type="fade" start="0" end="100" time="100"/>
+		 <effect type="zoom" start="150" end="100" center="1000,1000" time="450" tween="circle" easing="out"/>
+		</animation>
     </include>
     <include name="DialogOpenClose">
         <animation type="WindowOpen">
@@ -57,14 +64,28 @@
         <texturefocus>-</texturefocus>
     </include>
     <include name="Heading">
-        <left>330</left>
-        <top>0</top>
-        <align>center</align>
-        <aligny>center</aligny>
-        <width>1260</width>
-        <height>75</height>
-        <textcolor>textcolor2</textcolor>
-        <font>font42</font>
+        <control type="label">
+			<top>76</top>
+			<width>1920</width>
+			<height>35</height>
+			<font>font45B</font>
+			<textcolor>$VAR[heading]</textcolor>
+			<shadowcolor>-</shadowcolor>
+			<align>center</align>
+			<scroll>false</scroll>
+			<label>$VAR[RootLabel]</label>
+		</control>
+    </include>    
+	<include name="Heading2">
+			<top>76</top>
+			<width>1920</width>
+			<height>35</height>
+			<font>font45B</font>
+			<textcolor>$VAR[heading]</textcolor>
+			<shadowcolor>-</shadowcolor>
+			<align>center</align>
+			<scroll>false</scroll>
+			<label>$VAR[RootLabel]</label>
     </include>
     <include name="HeadingL">
         <left>60</left>
@@ -500,113 +521,6 @@
             <label>$LOCALIZE[180]: $INFO[ListItem.Duration] / $LOCALIZE[135]: $INFO[ListItem.Genre]</label>
         </control>
     </include>
-    <include name="PVRsidemenu">
-        <control type="group" description="Side menu 9000 group">
-            <visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
-            <include>DialogOpenCloseVisible</include>
-            <control type="image" description="List back">
-                <centerleft>960</centerleft>
-                <top>50</top>
-                <width>1002</width>
-                <height>1050</height>
-                <aspectratio>stretch</aspectratio>
-                <texture border="150">images/Dialog.png</texture>
-            </control>
-            <control type="grouplist" id="9000">
-                <centerleft>960</centerleft>
-                <top>200</top>
-                <height>1000</height>
-                <include>DialogGLs</include>
-                <control type="button" id="3">
-                    <visible>!Window.IsActive(TVGuide)</visible>
-                    <description>Sort by button</description>
-                    <include>DialogButt</include>
-                    <label>103</label>
-                </control>
-                <control type="togglebutton" id="4">
-                    <visible>!Window.IsActive(TVGuide)</visible>
-                    <description>Sort asc</description>
-                    <include>DialogButt</include>
-                    <label>584</label>
-                    <altlabel>585</altlabel>
-                    <usealttexture>Container.SortDirection(Ascending)</usealttexture>
-                </control>
-                <control type="radiobutton" id="5">
-                    <description>Group recording items by folder structure</description>
-                    <left>0</left>
-                    <right>40</right>
-                    <include>DialogButt</include>
-                    <label>19270</label>
-                    <visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
-                </control>
-                <control type="button" id="31">
-                    <description>TV Guide</description>
-                    <include>DialogButt</include>
-                    <onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">noop</onclick>
-                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
-                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
-                    <label>22020</label>
-                </control>
-                <control type="button" id="32">
-                    <description>TV Channels</description>
-                    <include>DialogButt</include>
-                    <onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">noop</onclick>
-                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
-                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
-                    <label>19023</label>
-                </control>
-                <control type="button" id="34">
-                    <description>Recordings</description>
-                    <include>DialogButt</include>
-                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
-                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
-                    <label>19163</label>
-                </control>
-                <control type="button" id="35">
-                    <description>Timers</description>
-                    <include>DialogButt</include>
-                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
-                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
-                    <label>19040</label>
-                </control>
-                <control type="button" id="36">
-                    <description>Search</description>
-                    <include>DialogButt</include>
-                    <onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
-                    <onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
-                    <label>137</label>
-                </control>
-                <control type="button" id="28">
-                    <description>Channel Groups</description>
-                    <left>0</left>
-                    <right>40</right>
-                    <include>DialogButt</include>
-                    <label>-</label>
-                </control>
-                <control type="radiobutton" id="600" description="EPG">
-                    <visible>Window.IsActive(MyPVRGuide.xml)</visible>
-                    <include>DialogButt</include>
-                    <onclick>Container.SetViewMode(10)</onclick>
-                    <selected>Control.IsVisible(10)</selected>
-                    <label>EPG</label>
-                </control>
-                <control type="radiobutton" id="602" description="Now">
-                    <visible>Window.IsActive(MyPVRGuide.xml)</visible>
-                    <include>DialogButt</include>
-                    <onclick>Container.SetViewMode(11)</onclick>
-                    <selected>Control.IsVisible(11) + !Control.IsVisible(10)</selected>
-                    <label>19030</label>
-                </control>
-                <control type="radiobutton" id="603" description="Next">
-                    <visible>Window.IsActive(MyPVRGuide.xml)</visible>
-                    <include>DialogButt</include>
-                    <onclick>Container.SetViewMode(12)</onclick>
-                    <selected>Control.IsVisible(12) + !Control.IsVisible(10)</selected>
-                    <label>19031</label>
-                </control>
-            </control>
-        </control>
-    </include>
     <include name="BigListTitle">
         <left>128</left>
         <top>12</top>
@@ -686,5 +600,505 @@
      <align>center</align>
      <aligny>center</aligny>
      <font>font27</font>
+    </include>	
+	<include name="menu9000">
+			<left>-502</left>
+			<!--visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible-->
+			<visible>true</visible>
+            <!--include>DialogOpenCloseVisible</include-->
+			<animation effect="slide" start="0,0" end="502,0" time="250"  tween="circle" easing="inout">Focus</animation>	
+			<animation effect="slide" start="502,0" end="0,0" time="250"  tween="circle" easing="inout">Unfocus</animation>
+			<control type="image" description="List back">
+				<width>502</width>
+				<height>1080</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>$VAR[9000menu]</texture>
+			</control>
+			<control type="togglebutton" description="option open">
+				<width>30</width>
+				<height>110</height>
+				<left>510</left>
+				<centertop>540</centertop>
+				<colordiffuse>$VAR[homelogocolor]</colordiffuse>
+				<texturefocus>notification2/line2.png</texturefocus>
+				<texturenofocus>notification2/line2.png</texturenofocus>
+				<alttexturefocus>notification2/line2.png</alttexturefocus>
+				<alttexturenofocus>notification2/line2.png</alttexturenofocus>
+				<onclick>Action(left])</onclick>
+				<altclick>Action(right)</altclick>
+			</control>
+			<control type="label" id="200">
+                <!--Label Menu-->
+				<left>-30</left>
+				<top>150</top>
+                <width>458</width>
+                <align>left</align>
+                <textoffsetx>50</textoffsetx>
+                <font>font45B</font>
+                <textcolor>$VAR[heading]</textcolor>
+                <label>$LOCALIZE[33061]:</label>
+            </control>
+			<control type="label" id="200">
+                <!--Date Label-->
+				<left>-30</left>
+				<top>50</top>
+                <width>588</width>
+                <align>left</align>
+                <textoffsetx>50</textoffsetx>
+                <font>font40</font>
+                <textcolor>$VAR[heading]</textcolor>
+                <label>$INFO[System.Time][CR]$INFO[System.Date]</label>
+            </control>
+			<control type="grouplist" id="9000">
+				<onright>50</onright>
+				<left>15</left>
+                <height>878</height>
+                <top>230</top>
+				<control type="grouplist" description="videos">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(videos)</visible>
+					<control type="button" id="2" description="Views">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>	
+					<control type="button" id="8" description="search">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>137</label>
+					</control>
+					<control type="togglebutton" id="14" description="Toggle Watched">
+						<align>left</align>
+						<width>468</width>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[535]: $LOCALIZE[16100]</label>
+						<altlabel>$LOCALIZE[535]: $LOCALIZE[16101]</altlabel>
+					</control>
+					<control type="edit" id="19" description="Filter">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+						<textwidth>230</textwidth>
+						<textoffsetx>60</textoffsetx>
+						<textoffsety>13</textoffsety>
+						<label>587</label>
+						<include>DialogButt</include>
+					</control>
+					<control type="button" id="3" description="Sort">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>
+					<control type="togglebutton" id="4" description="SortOrder">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>584</label>
+						<altlabel>585</altlabel>
+						<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+					</control>
+					<control type="button" id="698" description="Browse files">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[1024] $LOCALIZE[744]</label>
+						<onclick>ActivateWindow(Videos,files)</onclick>
+                </control>
+					<control type="togglebutton" id="699" description="Playing">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<enable>Player.HasMedia</enable>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[16003]</label>
+						<altlabel>$LOCALIZE[31055]</altlabel>
+						<usealttexture>Player.HasMedia</usealttexture>
+						<onclick>fullscreen</onclick>
+						<altclick>fullscreen</altclick>
+					</control>
+					<control type="button" id="4401">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<!--current playlist-->
+						<label>13350</label>
+						<onclick>ActivateWindow(videoplaylist)</onclick>
+						<visible>!StringCompare(Playlist.Length(video),0)</visible>
+						<include>DialogButt</include>
+					</control>
+					<control type="button" id="4402">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<!--current playlist-->
+						<label>Favorites</label>
+						<include>DialogButt</include>
+						<onclick>ActivateWindow(favourites)</onclick>
+					</control>
+					<control type="togglebutton" id="20">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Update library</description>
+						<include>DialogButt</include>
+						<label>653</label>
+						<altlabel>13353</altlabel>
+						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+				</control>
+			    <control type="grouplist" description="addonbrowser">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(addonbrowser)</visible>
+					<control type="button" id="9">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<description>Check for updates</description>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[24034]</label>
+					</control>					
+					<control type="button" id="5" description="Updates">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[24063]: $LOCALIZE[1223]</label>
+						<altlabel>$LOCALIZE[24063]: $LOCALIZE[305]</altlabel>
+					</control>
+					<control type="togglebutton" id="6" description="Notifications">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[25000]: $LOCALIZE[1223]</label>
+						<altlabel>$LOCALIZE[25000]: $LOCALIZE[305]</altlabel>
+					</control>
+					<control type="button" id="3" description="Sort">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<include>DialogButt</include>
+					</control>				
+					<control type="radiobutton" id="7" description="language filter">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<include>DialogButt</include>
+						<label>25001</label>
+					</control>
+					<control type="radiobutton" id="8" description="Hide Broken">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<include>DialogButt</include>
+						<label>24999</label>
+					</control>
+					<control type="button" id="699" description="Playing">
+						<textoffsetx>22</textoffsetx>
+						<align>left</align>
+						<width>468</width>
+						<enable>Player.HasMedia</enable>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[31055]</label>
+						<onclick>fullscreen</onclick>
+					</control>
+                </control>
+				<control type="grouplist" description="music">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(musiclibrary)</visible>
+					<control type="button" id="2" description="Views">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>
+					<control type="button" id="3" description="Sort">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>
+					<control type="togglebutton" id="16" description="PartyMode">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[589]: $LOCALIZE[1223]</label>
+						<altlabel>$LOCALIZE[589]: $LOCALIZE[305]</altlabel>
+					</control>
+					<control type="button" id="698" description="Files">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[1024] $LOCALIZE[744]</label>
+						<onclick>ActivateWindow(MusicFiles,root)</onclick>
+					</control>
+					<control type="button" id="699" description="Playing">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>Player.HasMedia</visible>
+						<label>$LOCALIZE[16003]</label>
+						<altlabel>$LOCALIZE[31055]</altlabel>
+						<onclick>fullscreen</onclick>
+						<altclick>fullscreen</altclick>
+						<include>DialogButt</include>
+						<animation effect="fade" start="100" end="60" time="100" condition="!Player.HasMedia">Conditional</animation>
+					</control>
+					<control type="togglebutton" id="20">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Update library</description>
+						<include>DialogButt</include>
+						<label>653</label>
+						<altlabel>13353</altlabel>
+						<usealttexture>library.isscanningvideo</usealttexture>
+					</control>
+                </control>
+				<control type="grouplist" description="pictures">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(pictures)</visible>
+					<control type="button" id="2" description="Views">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>
+					<control type="button" id="3" description="Sort">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+					</control>
+					<control type="button" id="6" description="Slideshow">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<disabledcolor>Disabled</disabledcolor>
+						<include>DialogButt</include>
+						<label>108</label>
+						<visible>!ListItem.IsFolder</visible>
+					</control>
+					<control type="button" id="7" description="Recursive slideshow">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+					<disabledcolor>Disabled</disabledcolor>
+						<include>DialogButt</include>
+						<label>13318</label>
+						<visible>ListItem.IsFolder</visible>
+					</control>
+					<control type="radiobutton" id="9" description="Randomize">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<include>DialogButt</include>
+						<label>13319</label>
+					</control>
+					<control type="button" id="699" description="Playing">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>Player.HasMedia</visible>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[16003]</label>
+						<altlabel>$LOCALIZE[31055]</altlabel>
+						<usealttexture>Player.HasMedia</usealttexture>
+						<onclick>fullscreen</onclick>
+						<altclick>fullscreen</altclick>
+						<animation effect="fade" start="100" end="60" time="100" condition="!Player.HasMedia">Conditional</animation>
+					</control>
+                </control>
+				<control type="grouplist" description="PVRsidemenu">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(tvguide)</visible>
+					<control type="button" id="3">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>!Window.IsActive(TVGuide)</visible>
+						<description>Sort by button</description>
+						<include>DialogButt</include>
+						<label>103</label>
+					</control>
+					<control type="togglebutton" id="4">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>!Window.IsActive(TVGuide)</visible>
+						<description>Sort asc</description>
+						<include>DialogButt</include>
+						<label>584</label>
+						<altlabel>585</altlabel>
+						<usealttexture>Container.SortDirection(Ascending)</usealttexture>
+					</control>
+					<control type="radiobutton" id="5">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Group recording items by folder structure</description>
+						<left>0</left>
+						<right>40</right>
+						<include>DialogButt</include>
+						<label>19270</label>
+						<visible>Window.IsActive(TVRecordings) | Window.IsActive(RadioRecordings)</visible>
+					</control>
+					<control type="button" id="31">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>TV Guide</description>
+						<include>DialogButt</include>
+						<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">noop</onclick>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+						<label>22020</label>
+					</control>
+					<control type="button" id="32">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>TV Channels</description>
+						<include>DialogButt</include>
+						<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">noop</onclick>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+						<label>19023</label>
+					</control>
+					<control type="button" id="34">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Recordings</description>
+						<include>DialogButt</include>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+						<label>19163</label>
+					</control>
+					<control type="button" id="35">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Timers</description>
+						<include>DialogButt</include>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+						<label>19040</label>
+					</control>
+					<control type="button" id="36">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Search</description>
+						<include>DialogButt</include>
+						<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+						<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+						<label>137</label>
+					</control>
+					<control type="button" id="28">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<description>Channel Groups</description>
+						<left>0</left>
+						<right>40</right>
+						<include>DialogButt</include>
+						<label>-</label>
+					</control>
+					<control type="radiobutton" id="600" description="EPG">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+						<include>DialogButt</include>
+						<onclick>Container.SetViewMode(10)</onclick>
+						<selected>Control.IsVisible(10)</selected>
+						<label>EPG</label>
+					</control>
+					<control type="radiobutton" id="602" description="Now">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+                    <visible>Window.IsActive(MyPVRGuide.xml)</visible>
+						<include>DialogButt</include>
+						<onclick>Container.SetViewMode(11)</onclick>
+						<selected>Control.IsVisible(11) + !Control.IsVisible(10)</selected>
+						<label>19030</label>
+					</control>
+					<control type="radiobutton" id="603" description="Next">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<visible>Window.IsActive(MyPVRGuide.xml)</visible>
+						<include>DialogButt</include>
+						<onclick>Container.SetViewMode(12)</onclick>
+						<selected>Control.IsVisible(12) + !Control.IsVisible(10)</selected>
+						<label>19031</label>
+					</control>
+				</control>
+				<control type="grouplist" description="Programs">
+					<onright>50</onright>
+					<left>15</left>
+					<height>878</height>
+					<top>230</top>
+					<visible>Window.IsActive(programs)</visible>
+					<control type="button" id="2" description="Views">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+					  <include>DialogButt</include>
+					</control>
+					<control type="button" id="3" description="Sort">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+					  <include>DialogButt</include>
+					</control>
+					<control type="togglebutton" id="4" description="SortMode">
+						<width>468</width>
+						<align>left</align>
+						<textoffsetx>22</textoffsetx>
+						<!--alttexturenofocus>-</alttexturenofocus-->
+						<include>DialogButt</include>
+						<label>$LOCALIZE[21429]: $LOCALIZE[21430]</label>
+						<altlabel>$LOCALIZE[21429]: $LOCALIZE[21431]</altlabel>
+					</control>
+					<control type="togglebutton" id="699" description="Playing">
+						<visible>Player.HasMedia</visible>
+						<include>DialogButt</include>
+						<label>$LOCALIZE[16003]</label>
+						<altlabel>$LOCALIZE[31055]</altlabel>
+						<usealttexture>Player.HasMedia</usealttexture>
+						<onclick>fullscreen</onclick>
+						<altclick>fullscreen</altclick>
+						<animation effect="fade" start="100" end="60" time="100" condition="!Player.HasMedia">Conditional</animation>
+					</control>
+				</control>
+            </control>
     </include>
 </includes>

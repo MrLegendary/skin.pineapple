@@ -10,12 +10,12 @@
      <texture border="50">images/ContextMenu.png</texture>
     </control>
     <control type="group">
-      <left>460</left>
+      <left>0</left>
       <top>350</top>
       <control type="label" id="1" description="Heading">
         <left>0</left>
         <label>-</label>
-        <width>960</width>
+        <width>1920</width>
         <font>font33B</font>
         <align>center</align>
 		<textcolor>textcolor2</textcolor>
@@ -24,7 +24,7 @@
         <left>0</left>
         <top>108</top>
         <label>-</label>
-        <width>auto</width>
+        <width>1920</width>
         <align>center</align>
         <scroll>true</scroll>
 		<textcolor>textcolor2</textcolor>
@@ -33,7 +33,7 @@
         <left>0</left>
         <top>156</top>
         <label>-</label>
-        <width>auto</width>
+        <width>1920</width>
         <align>center</align>
         <scroll>true</scroll>
 		<textcolor>textcolor2</textcolor>
@@ -48,7 +48,7 @@
 		<textcolor>textcolor2</textcolor>
       </control>
       <control type="button" id="10" description="No">
-        <left>325</left>
+        <centerleft>960</centerleft>
         <top>390</top>
         <width>270</width>
         <label>[COLOR FFFFFFFF]$LOCALIZE[107][/COLOR]</label>
@@ -57,7 +57,7 @@
         <onup>11</onup>
       </control>
       <control type="button" id="11" description="Yes">
-        <left>325</left>
+        <centerleft>960</centerleft>
         <top>315</top>
         <width>270</width>
 		<texturenofocus diffuse="defaults/addonbuttondiffuse.png">defaults/button.png</texturenofocus>

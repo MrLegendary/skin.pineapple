@@ -9,7 +9,7 @@
       <width>1920</width>
       <height>1080</height>
       <aspectratio>stretch</aspectratio>
-      <texture>images/ContextMenu.png</texture>
+	  <texture>$VAR[9000menu]</texture>
     </control>
     <control type="grouplist" id="9000">
 		<top>192</top>
@@ -27,9 +27,8 @@
 		<orientation>vertical</orientation>
       <control type="button" id="1" description="Exit button">
         <include>DialogButt</include>
-		<colordiffuse>FFF43934</colordiffuse>
         <onclick>XBMC.Quit()</onclick>
-        <label>[COLOR FFFFFFFF]$LOCALIZE[13009][/COLOR]</label>
+        <label>$LOCALIZE[13009]</label>
       </control>
       <control type="button" id="2" description="Shutdown button">
         <enable>System.CanPowerDown</enable>

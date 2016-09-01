@@ -37,30 +37,30 @@
         <top>90</top>
 		<left>0</left>
         <width>1920</width>
-        <height>610</height>
+        <height>620</height>
         <orientation>horizontal</orientation>
         <scrolltime>400</scrolltime>
-        <itemlayout height="600" width="390">
+        <itemlayout height="600" width="382">
             <control type="image">
                 <visible>IsEmpty(ListItem.Art(tvshow.poster))</visible>
-                <left>100</left>
-                <top>16</top>
-                <width>340</width>
-                <height>500</height>
+                <left>90</left>
+                <top>35</top>
+                <width>335</width>
+                <height>501</height>
                 <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Thumb]</texture>
                 <aspectratio>scale</aspectratio>
             </control>
             <control type="image">
                 <visible>!IsEmpty(ListItem.Art(tvshow.poster))</visible>
-                <left>100</left>
-                <top>16</top>
-                <width>340</width>
-                <height>500</height>
+                <left>90</left>
+                <top>35</top>
+                <width>335</width>
+                <height>501</height>
                 <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
                 <aspectratio>scale</aspectratio>
             </control>
         </itemlayout>
-        <focusedlayout height="600" width="390">
+        <focusedlayout height="600" width="382">
             <control type="group">
                 <animation effect="zoom" start="100" end="110" time="120" center="auto" tween="Back" easing="Out">Focus</animation>
                 <animation effect="zoom" start="110" end="100" time="120" center="auto">unFocus</animation>
@@ -75,19 +75,19 @@
                 </control>
                 <control type="image">
                     <visible>IsEmpty(ListItem.Art(tvshow.poster))</visible>
-                    <left>100</left>
-                    <top>16</top>
-                    <width>340</width>
-                    <height>500</height>
+                    <left>73</left>
+                    <top>22</top>
+                    <width>346</width>
+                    <height>529</height>
                     <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Thumb]</texture>
                     <aspectratio>scale</aspectratio>
                 </control>
                 <control type="image">
                     <visible>!IsEmpty(ListItem.Art(tvshow.poster))</visible>
-                    <left>100</left>
-                    <top>16</top>
-                    <width>340</width>
-                    <height>500</height>
+                    <left>73</left>
+                    <top>22</top>
+                    <width>346</width>
+                    <height>529</height>
                     <texture fallback="DefaultVideoCover.png" background="true">$INFO[ListItem.Art(tvshow.poster)]</texture>
                     <aspectratio>scale</aspectratio>
                 </control>
@@ -97,11 +97,11 @@
                 <animation effect="fade" start="100" end="0" time="200">unFocus</animation>
                 <control type="textbox">
                     <visible>ControlGroup(700).HasFocus()</visible>
-                    <centerleft>290</centerleft>
-                    <top>544</top>
+                    <centerleft>258</centerleft>
+                    <top>581</top>
                     <width>360</width>
                     <height>60</height>
-                    <font>font24</font>
+                    <font>font30B</font>
                     <textcolor>ShelfBottomLabelFO</textcolor>
                     <autoscroll>false</autoscroll>
                     <label>[B]$INFO[ListItem.Label][/B]</label>
@@ -168,12 +168,13 @@
     <include name="Movies">
         <control type="panel" id="311" description="TOP Shortcuts">
             <visible>[Library.HasContent(Movies) + [Container(9000).HasFocus(340) | Control.HasFocus(311)]] | [Container(9000).HasFocus(621) | Container(9000).HasFocus(622) | Container(9000).HasFocus(623) | Container(9000).HasFocus(624) | Container(9000).HasFocus(625)]</visible>
+            <preloaditems>2</preloaditems>
             <onup>9009</onup>
             <ondown>9000</ondown>
             <onleft>noop</onleft>
             <onright>noop</onright>
             <include>MoviesShortcutsCommons</include>
-            <content target="video">$VAR[shelfmovies]</content>
+            <content>$INFO[Container(300).ListItem.Property(widgetPath)]</content>
         </control>
     </include>
     <include name="TV">
@@ -206,7 +207,7 @@
     <include name="Addons_Shortcuts">
         <control type="group">
             <control type="panel" id="315" description="TOP Shortcuts">
-                <visible>Container(9000).HasFocus(343) | Control.HasFocus(315)</visible>
+                <visible>Container(9000).HasFocus(343) | Control.HasFocus(315) | Container(9000).Row(0)</visible>
                 <onup>noop</onup>
                 <ondown>9000</ondown>
                 <onleft>315</onleft>
@@ -896,4 +897,37 @@
             </control>
         </control>
     </include>
-</includes>
+
+	<!-- widget vars for widgets that do not auto refresh automatically -->
+    <variable name="widget510">
+        <value condition="!IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="!IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+        <value>$INFO[Container(300).ListItem.Property(widgetPath)]</value>
+    </variable>
+    <variable name="widget520">
+        <value condition="!IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="!IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+        <value>$INFO[Container(300).ListItem.property(widgetPath.1)]</value>
+    </variable>
+    <variable name="widget530">
+        <value condition="!IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="!IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+        <value>$INFO[Container(300).ListItem.property(widgetPath.2)]</value>
+    </variable>
+    <variable name="widget540">
+        <value condition="!IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="!IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+        <value>$INFO[Container(300).ListItem.property(widgetPath.3)]</value>
+    </variable>
+    <variable name="widget1508">
+        <value condition="!IsEmpty(Window(Home).property(skinhelper-refreshvideowidgetsbusy))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="!IsEmpty(Window(Home).property(favwidgetrefresh))">special://skin/extras/emptywidget.xsp</value>
+        <value condition="window.isactive(fullscreenvideo)">special://skin/extras/emptywidget.xsp</value>
+        <value>$INFO[Container(300).ListItem.property(widgetPath.99)]</value>
+    </variable>
+	
+	</includes>

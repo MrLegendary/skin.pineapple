@@ -10,7 +10,7 @@
             <top>40</top>
             <width>720</width>
             <height>55</height>
-            <font>size42B</font>
+            <font>font42</font>
             <align>right</align>
             <textcolor>textcolor2</textcolor>
             <label>31052</label>
@@ -80,7 +80,7 @@
 							<top>222</top>
 							<width>350</width>
 							<height>24</height>
-							<font>size27</font>
+							<font>font27</font>
 							<align>center</align>
 							<scroll>false</scroll>
 							<textcolor>homelabelNF</textcolor>
@@ -137,7 +137,7 @@
 							<top>238</top>
 							<width>368</width>
 							<height>24</height>
-							<font>size27</font>
+							<font>font27</font>
 							<align>center</align>
 							<scroll>true</scroll>
 							<textcolor>homelabelFO</textcolor>
@@ -879,7 +879,7 @@
 						<left>20</left>
 						<width>1000</width>
 						<textcolor>textcolor2</textcolor>
-						<font>Size24</font>
+						<font>font24</font>
 						<align>left</align>
 						<label>31034</label>
 					</control>
@@ -893,7 +893,7 @@
 						<left>20</left>
 						<width>1000</width>
 						<textcolor>textcolor2</textcolor>
-						<font>Size24</font>
+						<font>font24</font>
 						<align>left</align>
 						<label>31081</label>
 					</control>
@@ -907,7 +907,7 @@
 						<left>20</left>
 						<width>1000</width>
 						<textcolor>textcolor2</textcolor>
-						<font>Size24</font>
+						<font>font24</font>
 						<align>left</align>
 						<label>31035</label>
 					</control>
@@ -995,7 +995,7 @@
 				<width>1000</width>
 				<align>right</align>
 				<textcolor>ShelfTopLabelNF</textcolor>
-				<font>Size22</font>
+				<font>font22</font>
 				<label>Scroll Right to Add > 5 Addons > 5 Favourites</label>
 			</control>			
 			<control type="grouplist" id="520">
@@ -1108,7 +1108,7 @@
                 <visible>Skin.HasSetting(PicturesShelf_Custom)</visible>
                 <width>1000</width>
                 <textcolor>Grey2</textcolor>
-                <font>Size22</font>
+                <font>font22</font>
                 <label>Scroll Right to Add > 5 Addons > 5 Scripts > 3 Favourites</label>
             </control>
             <control type="radiobutton" id="303" description="Custom">
@@ -1210,7 +1210,7 @@
                 <visible>Skin.HasSetting(AddonsShelf_Custom)</visible>
                 <width>1000</width>
                 <textcolor>Grey2</textcolor>
-                <font>Size22</font>
+                <font>font22</font>
                 <label>Scroll Right to Add > 10 Addons > 5 Scripts > 3 Favourites</label>
             </control>
             <control type="radiobutton" id="303" description="Custom">
@@ -1231,7 +1231,7 @@
 				<width>1000</width>
 				<align>right</align>
 				<textcolor>ShelfTopLabelNF</textcolor>
-				<font>Size22</font>
+				<font>font22</font>
 				<label>Scroll Right to Add > 10 Addons > 5 Scripts > 3 Favourites</label>
 			</control>		
 			<control type="grouplist" id="520">
@@ -1372,7 +1372,7 @@
                 <left>20</left>
                 <width>1000</width>
                 <textcolor>Grey2</textcolor>
-                <font>Size22</font>
+                <font>font22</font>
                 <label>Scroll Right to Add > 10 Addons > 5 Scripts</label>
             </control>
         </control>
@@ -1508,7 +1508,7 @@
                 <label>[B]$LOCALIZE[31029] $LOCALIZE[33063][/B]</label>
                 <align>center</align>
                 <aligny>center</aligny>
-                <font>size36</font>
+                <font>font36</font>
                 <textcolor>White</textcolor>
                 <shadowcolor>-</shadowcolor>
             </control>
@@ -1525,7 +1525,7 @@
                     <onup>9000</onup>
                     <ondown>9000</ondown>
                     <itemgap>0</itemgap>
-                    <font>size33</font>
+                    <font>font33</font>
                     <scrolltime>260</scrolltime>
                     <!--defaultcontrol always="true">701</defaultcontrol-->
                     <control type="button" id="666">
@@ -1629,7 +1629,7 @@
                 <height>60</height>
                 <align>center</align>
                 <textcolor>Grey</textcolor>
-                <font>Size26</font>
+                <font>font26</font>
                 <label>$LOCALIZE[35500]:</label>
             </control>
             <control type="label">
@@ -1638,7 +1638,7 @@
                 <width>900</width>
                 <height>60</height>
                 <align>center</align>
-                <font>Size60B</font>
+                <font>font60B</font>
 				<textcolor>textcolor4</textcolor>
                 <label>$INFO[Weather.Location]</label>
             </control>
@@ -1665,7 +1665,7 @@
                 <height>300</height>
                 <align>center</align>
                 <textcolor>Grey2</textcolor>
-                <font>Size26</font>
+                <font>font26</font>
                 <label>$LOCALIZE[31061]</label>
             </control>
         </control-->
