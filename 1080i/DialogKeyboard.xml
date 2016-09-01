@@ -902,7 +902,7 @@
 		</itemlayout>
 		<focusedlayout height="48" width="250">
 		<control type="button">
-			<width>230</width>
+			<width>250</width>
 			<height>48</height>
 		</control>
 			<control type="label">
