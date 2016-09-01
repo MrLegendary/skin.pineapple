@@ -899,7 +899,7 @@
 				<font>size27</font>
 				<label>$INFO[ListItem.Label]</label>
 			</control>					
-		</itemlayout
+		</itemlayout>
 		<focusedlayout height="48" width="250">
 		<control type="button">
 			<width>230</width>
